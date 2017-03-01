@@ -6,12 +6,13 @@ class GroupsController < ApplicationController
   end
   def show
     @group = Group.find(params[:id])
+    @posts = @group.posts
   end
-  # mei add edit
+
   def edit
 
   end
-  def
+  def new
     @group = Group.new
   end
   def create
@@ -23,7 +24,7 @@ class GroupsController < ApplicationController
     render :new
   end
    end
-   # mei added update destroy
+
    def update
 
      if @group.update(group_params)
